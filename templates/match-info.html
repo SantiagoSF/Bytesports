@@ -1,0 +1,114 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/maindash.css' %}">
+        <link rel="shortcut icon" href="{% static 'img/favicon.jpg' %}">
+        <title>Bytesports - Dashboard</title>
+    </head>
+    <body>
+        <nav id='nav-style' class='navbar'>
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    </button>
+                    <a style="text-decoration: none;
+    color: white;" class="font-bar navbar-brand" href="#">Bytesports</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="navbar-right">
+                        <a href="#"><span class="glyphicon glyphicon-list-alt"></span></a>
+                        <a href="/create_match"><span class="glyphicon glyphicon-plus"></span></a>
+                        <a href="/home"><span class="glyphicon glyphicon-home"></span></a>
+                        <img class='img-profile' src="{% static 'img/profile-img.jpg' %}">
+                        <a class="no-link user-name" href="#">Santiago</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Empieza el cuerpo de la aplicacion -->
+        <div class="container match">
+
+                <div class="col-md-2 text-center">
+                    <h1>4:30</h1>
+                    <p>Centraal</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>Cinta roja</h1>
+                    <p>4 jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center">
+                    <h1>VS</h1>
+                    <p>Amistoso</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>Senseis</h1>
+                    <p>4 Jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center match-direction">
+                    <p>Zamora 187, Condesa, Cuauhtémoc, 06140 Ciudad de México, D.F.</p>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <h2>Jugadores</h2>
+                </div>
+                <div class="col-md-6 players-list-left">
+                    <ul id="players-list">
+                        <li>Kevin</li>
+                        <li>Edgar</li>
+                        <li>Oscar</li>
+                    </ul>
+
+                </div>
+                <div class="col-md-6 players-list-right">
+                    <ul>
+                        <li>Sergio</li>
+                        <li>Henoc</li>
+                        <li>Rafa</li>
+                        <li>Pablo</li>
+                    </ul>
+
+                </div>
+                <div class="col-md-12">
+                    <h2 class='text-center'>Ubicacion</h2>
+                    <div class="text-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.09688513363!2d-99.18055175589764!3d19.41194110836968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff5c96fc9085%3A0x2f6aec40a6a0a8b0!2sCentraal!5e0!3m2!1ses-419!2smx!4v1439936025491" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                     </div>
+                </div>
+                <div class="col-md-12">
+                    <a id="join-button" href="#">
+                    <div class="join-button center-block">
+                        <h2 id="button-text">Join the party</h2>
+                    </div>
+                    </a>
+                </div>
+
+        </div>
+
+
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="{% static 'js/bootstrap.min.js'%}"></script>
+      <script type="text/javascript" src="{% static 'js/match-info.js' %}"></script>
+  </body>
+</html>

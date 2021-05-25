@@ -1,0 +1,189 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/maindash.css' %}">
+        <link rel="shortcut icon" href="{% static 'img/favicon.jpg' %}">
+        <title>Bytesports - Dashboard</title>
+    </head>
+    <body>
+        <nav id='nav-style' class='navbar'>
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    </button>
+                    <a style="text-decoration: none;
+    color: white;" class="font-bar navbar-brand" href="#">Bytesports</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="navbar-right">
+                        <a href="#"><span class="glyphicon glyphicon-list-alt"></span></a>
+                        <a href="/create_match"><span class="glyphicon glyphicon-plus"></span></a>
+                        <a href="/home"><span class="glyphicon glyphicon-home"></span></a>
+                        <img class='img-profile' src="{% static 'img/profile-img.jpg' %}">
+                        <a class="no-link user-name" href="#">Santiago</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Empieza el cuerpo de la aplicacion -->
+        {% for r in retas %}
+        <div class="container match">
+            <a href="/view_match">
+                <div class="col-md-2 text-center matchColor">
+                    <h1>{{ r.match_hour }}</h1>
+                    <p>{{ r.location_field }}</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>{{ r.team_name }}</h1>
+                    <p>{{ r.max_players }}</p>
+                </div>
+
+                <div class="col-md-2 text-center matchColor">
+                    <h1>VS</h1>
+                    <p>Amistoso</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>{{ r.team_vs }}</h1>
+                    <p>{{ r.max_players }}</p>
+                </div>
+
+                <div class="col-md-2 text-center match-direction">
+                    <p>{{r.location_field }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        <!--
+        <div class="container match">
+            <a href="#">
+                <div class="col-md-2 text-center matchColor">
+                    <h1>5:30</h1>
+                    <p>Fields sports</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>Cinta Negra</h1>
+                    <p>4 jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center matchColor">
+                    <h1>VS</h1>
+                    <p>Apuesta</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>Cinta Azul</h1>
+                    <p>4 Jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center match-direction">
+                    <p>Colonia Ensamblador calle Cobol numero 8</p>
+                </div>
+            </a>
+        </div>
+        <div class="container match">
+            <a href="#">
+                <div class="col-md-2 text-center matchColor">
+                    <h1>6:30</h1>
+                    <p>Castle of soccer</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>Cinta Verde</h1>
+                    <p>6 jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center matchColor">
+                    <h1>VS</h1>
+                    <p>Amistoso</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>Cinta morada</h1>
+                    <p>6 Jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center match-direction">
+                    <p>Colonia Ensamblador calle Cobol numero 9</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="container match">
+            <a href="#">
+                <div class="col-md-2 text-center matchColor">
+                    <h1>7:30</h1>
+                    <p>Palace of soccer</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>Cinta cuadrada</h1>
+                    <p>6 jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center matchColor">
+                    <h1>VS</h1>
+                    <p>Amistoso</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>Cinta redonda</h1>
+                    <p>6 Jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center match-direction">
+                    <p>Colonia Ensamblador calle Cobol numero 10</p>
+                </div>
+            </a>
+        </div>
+        <div class="container match">
+            <a href="#">
+                <div class="col-md-2 text-center matchColor">
+                    <h1>8:30</h1>
+                    <p>Dev.f futbol</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>Buen equipo</h1>
+                    <p>8 jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center matchColor">
+                    <h1>VS</h1>
+                    <p>Apuesta</p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h1>mejor equipo</h1>
+                    <p>8 Jugadores</p>
+                </div>
+
+                <div class="col-md-2 text-center match-direction">
+                    <p>Colonia Ensamblador calle Cobol numero 20</p>
+                </div>
+            </a>
+        </div>
+
+-->
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="{% static 'js/bootstrap.min.js'%}"></script>
+  </body>
+</html>
